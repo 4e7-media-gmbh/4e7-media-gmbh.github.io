@@ -10,10 +10,36 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vjs-video/0.1.11/vjs-video.min.js" integrity="sha256-FdzCyxXhyb+kU/IL7ANUUB5ffZC9YjFfMgtBGuvWwtE=" crossorigin="anonymous"></script>
+        <link href="https://vjs.zencdn.net/7.6.0/video-js.css" rel="stylesheet">
+        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-vast-vpaid/2.0.2/videojs_5.vast.vpaid.min.js" integrity="sha256-dS3vqilIeVqujxFIIgRTAPMqka6OJW5mcZrUoXx90Pc=" crossorigin="anonymous"></script>
     </head>
     <body>
        <h1>Hello World</h1>
        <span id="zone1370962"></span><script type="application/javascript" src="https://5eml9wq.las4srv.com/displayItem?cbzid=1370962&cbpid=1370811" async></script>
-        <script src="" async defer></script>
+       <video controls id="embedd-player" class="video-js">
+        <source src="https://www.notorious-mag.com/sites/default/files/4morninghabits.mp4" type="video/mp4">
+       </video>
+       <script>    
+       var player = videojs('embedd-player', {
+        muted: true,
+        controls: true,
+        autoplay: true,
+        width: "200px",
+        height: "100px",
+        sources: [{
+          type: "video/mp4",
+          src: "https://www.notorious-mag.com/sites/default/files/4morninghabits.mp4"
+        }],
+        plugins: {
+          vastClient: {
+            adTagUrl: "https://5eml9wq.las4srv.com/vast?cbzid=1370962&cbpid=1370811",
+            adsCancelTimeout: 10000,
+            playAdAlways: true,
+            adsEnabled: true
+          }
+        }
+      });</script>
     </body>
 </html>
